@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+  optimizer:
+    build: ./optimizer
+    # optional; can be removed if you don't need OR-Tools
